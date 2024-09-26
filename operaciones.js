@@ -20,7 +20,7 @@ function registrar (nombre, edad, tipo, color, enfermedad ){
 
     citas.push(nuevaCita)
 
-    fs.writeFile('vehiculos.json', JSON.stringify(citas), (error) => {
+    fs.writeFile('citas.json', JSON.stringify(citas), (error) => {
       if (error) {
         console.error('error al registrar cita:', error)
       } else {
@@ -41,7 +41,7 @@ const leer = () => {
       //se convierte el contenido del archivo JSON a un arreglo JS
       const citas = JSON.parse(data)
       //mostrando listado en la consola
-      console.log('listado vehiculos')
+      console.log('Citas registradas')
       console.log(citas)
     }
     catch (parseError){
