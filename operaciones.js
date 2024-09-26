@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function registrar(nombre, edad, tipo, color, enfermedad) {
+function registrar(nombre, edad, animal, color, enfermedad) {
   fs.readFile("./citas.json", "utf-8", (error, data) => {
     if (error) {
       console.error("error al leer el archivo:", error);
@@ -13,7 +13,7 @@ function registrar(nombre, edad, tipo, color, enfermedad) {
     const nuevaCita = {
       nombre,
       edad,
-      tipo,
+      animal,
       color,
       enfermedad,
     };
@@ -37,7 +37,7 @@ const leer = () => {
       return;
     }
     try {
-      //se convierte el contenido del archivo JSON a un arreglo JS
+      //se convierte el contenido del archivo JSON a un arreglo
       const citas = JSON.parse(data);
       //mostrando listado en la consola
       console.log("Citas registradas");
